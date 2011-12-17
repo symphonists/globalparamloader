@@ -7,9 +7,9 @@ the parameter to the parameter pool.
 Warning: safe evaluation has not been added yet. Do not enable this extension 
 if you are not absolutely sure that your Symphony installation is secure.
 
-- Version: 1.2
+- Version: 1.3
 - Author: Carsten de Vries <carsten@vrieswerk.nl>, Brendan Abbott <brendan@bloodbone.ws>
-- Build Date: 8th March 2011
+- Build Date: 31st October 2011
 - Github Repository: http://github.com/carsten/globalparamloader/tree/master
 - Requirements: Symphony 2.2
 

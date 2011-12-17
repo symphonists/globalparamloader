@@ -12,8 +12,8 @@
 		public function about() {
 			return array(
 				'name'			=> 'Global Parameter Loader',
-				'version'		=> '1.2',
-				'release-date'	=> '2011-03-08',
+				'version'		=> '1.3',
+				'release-date'	=> '2011-10-31',
 				'author'		=> array(
 					array(
 						'name'			=> 'Carsten de Vries',
