@@ -332,21 +332,13 @@
 		}
 
 		public function viewIndexPages($context, $set_id = Null) {
-			$pages = Symphony::Database()->fetch("
-				SELECT
-					p.*
-				FROM
-					tbl_pages AS p
-				ORDER BY
-					p.sortorder ASC
-			");
+			$pages = PageManager::fetch();
 			$options = array();
 
 			foreach ($pages as $page) {
 				$selected = $this->_driver->isPageSelected($page['id'], $set_id);
-
 				$options[] = array(
-					$page['id'], $selected, '/' . Symphony::Engine()->resolvePagePath($page['id'])
+					$page['id'], $selected, '/' . PageManager::resolvePagePath($page['id'])
 				);
 			}
 
