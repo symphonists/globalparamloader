@@ -447,7 +447,7 @@
 			$table->setAttribute('class', 'selectable');
 
 			$this->Form->appendChild($table);
-
+			
 			$actions = new XMLElement('div');
 			$actions->setAttribute('class', 'actions');
 
@@ -456,8 +456,7 @@
 				array('delete', false, __('Delete'))
 			);
 
-			$actions->appendChild(Widget::Select('with-selected', $options));
-			$actions->appendChild(Widget::Input('action[apply]', __('Apply'), 'submit'));
+			$actions->appendChild(Widget::Apply($options));
 
 			$this->Form->appendChild($actions);
 		}
