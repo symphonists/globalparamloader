@@ -218,8 +218,7 @@
 			$fieldset->appendChild(new XMLElement('legend', __('Parameters')));
 
 			$div = new XMLElement('div');
-			$div->setAttribute('class', 'subsection');
-			$div->appendChild(new XMLElement('h3', __('Parameters')));
+			
 			$ol = new XMLElement('ol');
 			$ol->setAttribute('class', 'filters-duplicator');
 
@@ -237,7 +236,8 @@
 			// Add parameter set:
 			$wrapper = new XMLElement('li');
 			$wrapper->setAttribute('class', 'template');
-
+			$wrapper->setAttribute('data-type', 'definiton');
+			
 			$this->displayParameter($wrapper, '-1', array(
 				'type' => __('Parameter definition')
 			));
@@ -291,7 +291,9 @@
 		}
 
 		protected function displayParameter(&$wrapper, $sortorder, $param) {
-			$wrapper->appendChild(new XMLElement('h4', ucwords($param['type'])));
+			$header = new XMLElement('header');
+			$header->appendChild(new XMLElement('h4', ucwords($param['type'])));
+			$wrapper->appendChild($header);
 			$wrapper->appendChild(Widget::Input("params[{$sortorder}][type]", $param['type'], 'hidden'));
 
 			if (!empty($param['id'])) {
