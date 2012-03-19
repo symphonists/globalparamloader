@@ -183,8 +183,9 @@
 			$this->setTitle(__('Symphony &ndash; Global Parameter Sets') . (
 				$this->_editing ? ' &ndash; ' . $this->_fields['name'] : null
 			));
-			$this->appendSubheading("<a href=\"{$this->_uri}/sets/\">" . __('Parameter Sets') . "</a> &mdash; " . (
-				$this->_editing ? $this->_fields['name'] : 'Untitled'
+			$this->appendSubheading($this->_editing ? $this->_fields['name'] : 'Untitled');
+			$this->insertBreadcrumbs(array(
+				Widget::Anchor(__('Parameter Sets'), $this->_uri . '/sets/'),
 			));
 
 		// Form: --------------------------------------------------------------
