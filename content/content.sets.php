@@ -60,7 +60,8 @@
 		}
 
 		public function __actionEditNormal() {
-
+			if(!is_array($this->_params)) $this->_params = array();
+			
 		// Validate: ----------------------------------------------------------
 
 			if (empty($this->_fields['name'])) {
