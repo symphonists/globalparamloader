@@ -221,6 +221,8 @@
 			
 			$ol = new XMLElement('ol');
 			$ol->setAttribute('class', 'filters-duplicator');
+			$ol->setAttribute('data-add', __('Add parameter'));
+			$ol->setAttribute('data-remove', __('Remove parameter'));
 
 			// Add existing parameters:
 			if(isset($this->_params)) {
