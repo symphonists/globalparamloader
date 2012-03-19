@@ -147,14 +147,7 @@
 		}
 
 		public function getPages() {
-			$pages = Symphony::Database()->fetch("
-				SELECT
-					p.path, p.handle, p.id
-				FROM
-					`tbl_pages` AS p
-				ORDER BY
-					`sortorder` ASC
-			");
+			$pages = PageManager::fetch(FALSE, array('path', 'handle', 'id'));
 			$result = array();
 
 			foreach ($pages as $page) {
