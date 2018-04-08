@@ -21,7 +21,7 @@
 			$this->_driver = Symphony::ExtensionManager()->create('globalparamloader');
 		}
 
-		public function build($context) {
+		public function build(array $context = array()) {
 			if (isset($context[0]) && ($context[0] == 'edit' || $context[0] == 'new')) {
 				if ($this->_editing = $context[0] == 'edit') {
 					$this->_fields = $this->_driver->getSet((integer)$context[1]);
@@ -61,7 +61,7 @@
 
 		public function __actionEditNormal() {
 			if(!is_array($this->_params)) $this->_params = array();
-			
+
 		// Validate: ----------------------------------------------------------
 
 			if (empty($this->_fields['name'])) {
@@ -446,7 +446,7 @@
 			);
 
 			$this->Form->appendChild($table);
-			
+
 			$actions = new XMLElement('div');
 			$actions->setAttribute('class', 'actions');
 
